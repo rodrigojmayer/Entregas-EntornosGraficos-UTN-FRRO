@@ -1,0 +1,78 @@
+Ejercitación  2 
+HTML está compuesto por un conjunto de elementos que son la base de su estructura. Los elementos están compuestos por dos tags (el de apertura y el de cierre) y el contenido en el medio (con excepción de los elementos vacíos ). Cada  tag  puede  tener atributos (proporcionan  ciertas  características  como  altura,  ancho, color, etc.) y eventos (asocian un script que se ejecuta cuando el evento ocurre). 
+Analizar  los  siguientes  segmentos  de  código  indicando  en  qué  sección  del  documento  HTML  se colocan, cuál es el efecto que producen y señalar cada uno de los elementos, etiquetas, y atributos (nombre y valor), aclarando si es obligatorio. 
+2.a) 
+    <!-- Código controlado el día 12/08/2009 --> 
+    Comentario: Se puede colocar en cualquier sección del documento HTML. No produce ningún efecto visual ni funcional en la página web. Es un comentario de código que solo es visible al revisar el código fuente de la página, utilizado por los desarrolladores para dejar notas o aclaraciones documentales. No constituye un elemento HTML (no genera un nodo de elemento en el DOM). No utiliza etiquetas tradicionales de apertura y cierre, sino las marcas de comentario SGML/HTML (<!-- para abrir y --> para cerrar). No posee atributos (por ende, tampoco nombres ni valores). Son completamente opcionales.
+2.b)  
+    <div id="bloque1">Contenido del bloque1</div> 
+    Elemento div: Se puede colocar solo en la  sección del body. Define un contenedor de bloque con el texto "Contenido del bloque1", ocupando todo el ancho disponible y generando un salto de linea. Etiqueta de apertura <div> y de cierre </div>, ambas obligatorias. Atributo id="bloque1", es opcional, nombre: id, valor: "bloque1"
+2.c)  
+    <img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" longdesc="detalles.htm" /> 
+    Elemento img: Se puede colocar solo en la sección del body. Muestra una imagen de 32x32 píxeles con el texto alternativo "lugar imagen" si no se carga o para lectores de pantalla. Etiqueta de apertura <img />, es única y obligatoria (por ser un elemento vacío, no lleva etiqueta de cierre). 
+    Atributos:
+    - src="", es obligatorio, nombre: src, valor="".
+    - alt="lugar imagen", es obligatorio, nombre: alt, valor: "lugar imagen".
+    - id="im1", es opcional, nombre: id, valor: "im1".
+    - name="im1", es opcional, nombre: name, valor: "im1".
+    - width:"32", es opcional, nombre: width, valor: "32".
+    - height="32", es opcional, nombre: height, valor: "32".
+    - longdesc="detalles.html", es opcional, nombre: longdesc, valor: "detalles.html".
+
+2.d) 
+    <meta name="keywords" lang="es" content="casa, compra, venta, alquiler " /> 
+    Elemento meta: Se coloca solo en la sección del head. Define metadatos con palabras clave en español ("casa, compra, venta, alquiler") para ayudar a los motores de búsqueda a indexar la página. Etiqueta de apertura <meta />, es única y obligatoria (elemento vacío sin etiqueta de cierre). 
+    Atributos:
+    - name="keywords", es opcional, nombre: name, valor: "keywords". 
+    - lang="es", es opcional, nombre: lang, valor: "es". 
+    - content="casa, compra, venta, alquiler ", es obligatorio si se usa name, nombre: content, valor: "casa, compra, venta, alquiler ".
+
+    <meta http-equiv="expires" content="16-Sep-2019 7:49 PM" /> 
+    Elemento meta: Se coloca solo en la sección del head. Define la fecha y hora de caducidad del documento para que los servidores o la caché sepan cuándo solicitar una nueva versión. Etiqueta de apertura <meta />, es única y obligatoria (elemento vacío sin etiqueta de cierre). 
+    Atributos:
+    - http-equiv="expires", es opcional, nombre: http-equiv, valor: "expires". 
+    - content="16-Sep-2019 7:49 PM", es obligatorio si se usa http-equiv, nombre: content, valor: "16-Sep-2019 7:49 PM".
+2.e) 
+    <a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" rel="help">Resumen HTML </a>  
+    Elemento a: Se coloca solo en la sección del body. Crea un hipervínculo con el texto "Resumen HTML " que dirige al sitio web especificado, indicando que es un recurso de ayuda, en español y en formato HTML. Etiqueta de apertura <a> y de cierre </a>, ambas obligatorias. 
+    Atributos: 
+    - href="http://www.e-style.com.ar/resumen.html", es obligatorio para definir el enlace, nombre: href, valor: "http://www.e-style.com.ar/resumen.html". 
+    - type="text/html", es opcional, nombre: type, valor: "text/html". 
+    - hreflang="es", es opcional, nombre: hreflang, valor: "es".
+    - charset="utf-8", es opcional, nombre: charset, valor: "utf-8".
+    - rel="help", es opcional, nombre: rel, valor: "help".
+2.f) 
+    <table width="200" summary="Datos correspondientes al ejercicio vencido"> 
+        <caption align="top"> Título </caption> 
+        <tr> 
+            <th scope="col">&nbsp;</th> 
+            <th scope="col">A</th> 
+            <th scope="col">B</th> 
+            <th scope="col">C</th> 
+        </tr> 
+        <tr> 
+            <th scope="row">1º</th> 
+            <td>&nbsp;</td> 
+            <td>&nbsp;</td> 
+            <td>&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <th scope="row">2º</th> 
+            <td>&nbsp;</td> 
+            <td>&nbsp;</td> 
+            <td>&nbsp;</td>
+        </tr> 
+    </table> 
+
+    Elemento table: Se coloca solo en la sección del body. Define una tabla de 200 píxeles de ancho con un título superior, un encabezado de columnas (A, B, C) y dos filas numeradas (1º, 2º) con celdas de datos vacías. Etiqueta de apertura <table> y de cierre </table>, ambas obligatorias. 
+    Atributos:
+    - width="200", es opcional, nombre: width, valor: "200".
+    - summary="Datos correspondientes al ejercicio vencido", es opcional, nombre: summary, valor: "Datos correspondientes al ejercicio vencido".
+
+    Elemento caption: Se coloca dentro del elemento table. Define el título o epígrafe " Título " para la tabla. Etiqueta de apertura <caption> y de cierre </caption>, la de apertura es obligatoria y la de cierre es opcional en HTML 4.01. Atributo align="top", es opcional, nombre: align, valor: "top".
+
+    Elemento tr: Se coloca dentro de table (o tbody/thead/tfoot). Define una fila dentro de la tabla (el ejemplo contiene 3 elementos tr). Etiqueta de apertura <tr> y de cierre </tr>, la de apertura es obligatoria y la de cierre es opcional en HTML 4.01. No posee atributos en este ejemplo.
+
+    Elemento th: Se coloca dentro de tr. Define una celda de encabezado con texto centrado y en negrita (el ejemplo contiene celdas de columna con " ", "A", "B", "C" y de fila con "1º", "2º"). Etiqueta de apertura <th> y de cierre </th>, la de apertura es obligatoria y la de cierre es opcional en HTML 4.01. Atributo scope="col" / scope="row", es opcional, nombre: scope, valor: "col" o "row".
+
+    Elemento td: Se coloca dentro de tr. Define una celda estándar de datos (el ejemplo contiene 6 celdas td con el espacio de no separación " "). Etiqueta de apertura <td> y de cierre </td>, la de apertura es obligatoria y la de cierre es opcional en HTML 4.01. No posee atributos en este ejemplo.

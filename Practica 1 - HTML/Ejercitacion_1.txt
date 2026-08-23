@@ -1,0 +1,29 @@
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última? 
+    - Es el estándar de lenguaje de marcado que define la estructura y el contenido de las páginas web mediante etiquetas (`<tags>`).
+    - Creado en 1990 por Tim Berners-Lee en el CERN.
+    - Versiones: HTML 1.0 (1991), HTML 2.0 (1995), HTML 3.2 (1997), HTML 4.0/4.01 (1997/1999), XHTML 1.0 (2000) y HTML5 (2014).
+    - Última versión: HTML5, mantenido hoy bajo el modelo HTML Living Standard (un estándar vivo en constante actualización sin versionado numérico).
+
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos con HTML? 
+    - Separar estructura de presentación: HTML estructura el contenido; CSS maneja el diseño visual.
+    - Accesibilidad e internacionalización: Garantizar acceso universal mediante alternativas de texto (`alt`), idiomas (`lang`) y codificación.
+    - Renderizado incremental: Diseñar la estructura para que el navegador muestre el contenido a medida que se descarga.
+    - Usar el estándar vigente: Codificar respetando la última recomendación del W3C para asegurar longevidad e interoperabilidad.
+
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado?  ¿y obsoleto? 
+    - Desaprobado (Deprecated): Su uso se desaconseja porque existen alternativas mejores (como CSS), pero sigue soportado por compatibilidad. (Ej: `CENTER`, `FONT`, `U`).
+    - Obsoleto (Obsolete): Eliminado del estándar por completo; los autores no deben usarlo. (Ej: `LISTING`, `PLAINTEXT`, `XMP`).
+
+4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01? 
+    - Document Type Definition. Es la declaración (basada en SGML) que define las reglas sintácticas, etiquetas, atributos y estructura válida del documento.
+    Tipos en HTML 4.01:
+    - Estricto (Strict): Prohíbe elementos desaprobados y de presentación. Exige CSS.
+    - Transicional (Transitional): Permite elementos desaprobados para mantener compatibilidad.
+    - Con Marcos (Frameset): Usado para dividir la pantalla en múltiples paneles independientes (`<frameset>`).
+
+5. Qué son los metadatos y cómo se especifican en HTML? 
+     Información sobre el documento (autor, palabras clave, codificación) en lugar del contenido en sí. Sirven para buscadores, servidores HTTP y navegadores.
+    ¿Cómo se especifican?:
+    - Dentro del documento: Con `<META>` en el `<HEAD>` usando pares `name="propiedad"` / `content="valor"`, o `http-equiv` para simular cabeceras HTTP.
+    - Fuera del documento: Con la etiqueta `<LINK>` apuntando a recursos externos.
+    - Perfil: Opcionalmente asociando un diccionario de reglas mediante el atributo `profile` en `<HEAD>`.

@@ -1,0 +1,380 @@
+Ejercitación  3 
+
+En cada caso, explicar las diferencias entre los segmentos de código y sus visualizaciones: 
+
+3.a)  
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a> 
+    Código: Enlace externo estándar.
+    Visualización: Abre la página de Google en la misma pestaña/ventana del navegador al hacer clic.
+
+<a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a> 
+    Código: Agrega el atributo target="_blank".
+    Visualización: Abre la página de Google en una nueva pestaña o ventana del navegador.
+
+<a href="http://www. google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help"> 
+    Código: Incluye metadatos informativos sobre el recurso enlazado (formato, idioma, codificación y relación de ayuda). (Nota: Le falta el texto visible del enlace y el tag de cierre </a>).
+    Visualización: Al no tener texto antes de cerrar la etiqueta, no se visualiza nada en la pantalla. Además, contiene un espacio erróneo en la URL (www. google.com.ar) que rompería el enlace.
+
+<a href="#">Click aquí para ir a Google</a> 
+    Código: Enlace con ancla vacía (#).
+    Visualización: Se muestra como un hipervínculo normal, pero al hacer clic no navega a otra página, sino que desplaza la ventana hacia la parte superior de la página actual.
+
+<a href="#arriba">Click aquí para volver arriba</a> 
+
+<a name="arriba" id="arriba"></a>
+
+
+3.b) 
+ 
+    <p>
+        <img src="im1.jpg" alt="imagen1" />
+        <a href="http://www.google.com.ar">Click aquí</a>
+    </p> 
+    Código: La imagen está fuera de la etiqueta <a>. Solo el texto "Click aquí" está envuelto por el hipervínculo.
+    Visualización: Muestra la imagen seguida del texto. Solo el texto es cliqueable y dirigen a Google; la imagen es estática.
+
+    <p>
+        <a href="http://www.google.com.ar">
+            <img src="im1.jpg" alt="imagen1" />
+        </a> 
+        Click aquí
+    </p>
+    Código: La etiqueta <a> envuelve exclusivamente a la imagen <img>. El texto "Click aquí" queda fuera.
+    Visualización: Muestra la imagen seguida del texto. Solo la imagen es cliqueable; hacer clic en el texto no realiza ninguna acción.
+
+    <p>
+        <a href="http://www.google.com.ar">
+            <img src="im1.jpg" alt="imagen1" />
+            Click aquí
+        </a>
+    </p> 
+    Código: Una única etiqueta <a> envuelve tanto a la imagen <img> como al texto "Click aquí".
+    Visualización: Muestra la imagen y el texto juntos. Ambos elementos (imagen y texto) forman un único bloque cliqueable que dirigen al mismo enlace.
+
+    <p>
+        <a href="http://www.google.com.ar">
+            <img src="im1.jpg" alt="imagen1" />
+        </a> 
+        <a href="http://www.google.com.ar">
+            Click aquí
+        </a>
+    </p> 
+    Código: Dos etiquetas <a> separadas e independientes, una para la imagen y otra para el texto, pero apuntando a la misma URL.
+    Visualización: Funcionalmente se percibe similar al bloque 3 (tanto imagen como texto son cliqueables hacia Google), pero técnicamente el navegador los trata como dos hipervínculos distintos.
+
+
+3.c) 
+ 
+ 
+    <ul>   
+        <li>xxx</li> 
+        <li>yyy</li> 
+        <li>zzz</li> 
+    </ul>
+    Código: Utiliza la etiqueta <ul> (unordered list).
+    Visualización: Genera una lista no ordenada. Cada elemento (<li>) aparece precedido por un viñeta sólida (bullet / punto) por defecto y con margen/sangría a la izquierda.
+
+    <ol> 
+        <li>xxx</li> 
+        <li>yyy</li> 
+        <li>zzz</li> 
+    </ol> 
+    Código: Utiliza una única etiqueta <ol> (ordered list) envolviendo a los tres elementos.
+    Visualización: Genera una lista ordenada continua. El navegador numera automáticamente los elementos de forma secuencial: 1. xxx, 2. yyy, 3. zzz.
+
+    <ol> 
+        <li>xxx</li> 
+    </ol> 
+    <ol> 
+        <li value="2">yyy</li> 
+    </ol> 
+    <ol> 
+        <li value="3">zzz</li> 
+    </ol> 
+    Código: Abre y cierra tres listas ordenadas <ol> independientes, usando el atributo value en los <li> de la segunda y tercera lista para forzar el número inicial.  
+    Visualización: Muestra visualmente la numeración 1. xxx, 2. yyy, 3. zzz, pero a diferencia del bloque 2, se crean tres listas separadas. Esto genera un espaciado/margen vertical adicional entre cada elemento debido a los márgenes por defecto que cada etiqueta <ol> agrega en el navegador.
+
+    <blockquote> 
+        <p>
+            1. xxx<br /> 
+            2. yyy<br /> 
+            3. zzz
+        </p> 
+    </blockquote>
+    Código: No utiliza etiquetas semánticas de lista (<ul>, <ol>, <li>). En su lugar, usa un bloque de cita (<blockquote>), un párrafo (<p>) y saltos de línea (<br />), escribiendo los números manualmente en el texto.
+    Visualización: El texto aparece con una sangría (indentación) de bloque grande a la izquierda propia de <blockquote>. Aunque visualmente se leen los números 1, 2 y 3, carece de semántica de lista, por lo que no es reconocido como una lista accesible por los lectores de pantalla o motores de búsqueda.
+
+
+3.d) 
+
+    <table border="1" width="300"> 
+        <tr> 
+            <th>Columna 1</th> 
+            <th>Columna 2</th> 
+        </tr> 
+        <tr> 
+            <td>Celda 1</td> 
+            <td>Celda 2</td> 
+        </tr> 
+        <tr> 
+            <td>Celda 3</td> 
+            <td>Celda 4</td> 
+        </tr> 
+    </table> 
+
+    Genera una cuadrícula de 2 columnas por 3 filas, con un ancho total de 300 píxeles y líneas de borde visibles de 1 píxel:
+    Primera fila: Muestra las celdas de encabezado en negrita y centradas (Columna 1 | Columna 2).
+    Segunda fila: Muestra las celdas de datos (Celda 1 | Celda 2) alineadas a la izquierda por defecto.
+    Tercera fila: Muestra las celdas de datos (Celda 3 | Celda 4) alineadas a la izquierda por defecto.
+
+
+3.e) 
+
+    <table width="200"> 
+        <caption> 
+            Título 
+        </caption> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr>   
+    </table>
+
+    Código: Utiliza la etiqueta dedicada <caption> para definir el título de la tabla de forma semántica. Contiene 2 filas de 3 celdas de datos con fondo gris claro (#dddddd).
+    Visualización: El texto "Título" se muestra fuera y centrado por encima del cuerpo de la tabla. No forma parte de la cuadrícula ni ocupa celdas, por lo que el ancho total de la tabla (200px) aplica exclusivamente a la cuadrícula de 3 columnas de datos.
+
+
+    <table width="200"> 
+        <tr> 
+            <td colspan="3">
+                <div align="center">Título</div>
+            </td> 
+        </tr> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+    </table>
+    Código: No utiliza <caption>. Agrega una fila adicional (<tr>) al principio con una única celda (<td>) que se extiende a lo largo de las 3 columnas usando el atributo colspan="3", alineando el texto mediante un elemento <div>.
+    Visualización: El texto "Título" se muestra dentro de la primera fila de la propia tabla (formando parte del cuerpo de la cuadrícula y consumiendo altura dentro de ella). A diferencia del bloque 1, esta fila carece del atributo bgcolor="#dddddd", por lo que esa primera celda superior mantiene un fondo transparente o blanco por defecto.
+
+3.f)
+
+<table width="200"> 
+        <tr> 
+            <td colspan="3">
+                <div align="center">Título</div>
+            </td> 
+        </tr> 
+        <tr> 
+            <td rowspan="2" bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+    </table> 
+    Código: Utiliza el atributo rowspan="2" en la primera celda de la segunda fila. Esto hace que esa celda se extienda verticalmente a lo largo de 2 filas, por lo que la tercera fila solo define 2 celdas de datos en lugar de 3.
+    Visualización: La primera columna de la zona de datos contiene una única celda más alta que abarca las dos filas inferiores. Las dos columnas restantes mantienen sus dos celdas independientes dispuestas una sobre otra.
+
+    <table width="200"> 
+        <tr> 
+            <td colspan="3">
+                <div align="center">Título</div>
+            </td> 
+        </tr> 
+        <tr> 
+            <td colspan="2" bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+            <td bgcolor="#dddddd">&nbsp;</td> 
+        </tr> 
+    </table>
+    Código: Utiliza el atributo colspan="2" en la primera celda de la segunda fila. Esto hace que esa celda se extienda horizontalmente abarcando el ancho de 2 columnas. La tercera fila contiene las 3 celdas estándar individuales.
+    Visualización: En la fila intermedia, la primera celda ocupa el espacio equivalente a dos columnas juntas, seguida por una celda simple a la derecha. En la última fila, se observan 3 celdas individuales distribuidas normalmente.
+
+
+3.g)
+
+    <table width="200" border="1"> 
+        <tr> 
+            <td colspan="3">
+                <div align="center">Título</div>
+            </td> 
+        </tr> 
+        <tr> 
+            <td colspan="2"rowspan="2">&nbsp;</td> 
+            <td>&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td width="50%">&nbsp;</td> 
+        </tr> 
+    </table> 
+    Código:
+    La primera fila fusiona 3 columnas (colspan="3").
+    La primera celda de la segunda fila combina 2 columnas de ancho por 2 filas de alto (colspan="2" rowspan="2").
+    La última celda incluye el atributo width="50%".
+    No especifica atributos de relleno ni espaciado de celdas.
+    Visualización: Genera una cuadrícula de 3 columnas en total con bordes dobles estándar (por el espaciado predeterminado entre celdas del navegador). En la zona inferior, hay una gran celda que ocupa dos tercios del ancho y dos filas de alto a la izquierda, y dos celdas apiladas individualmente a la derecha.
+
+    <table width="200" border="1" cellpadding="0" cellspacing="0"> 
+        <tr> 
+            <td colspan="2">
+            <div align="center">Título</div></td> 
+        </tr> 
+        <tr> 
+            <td rowspan="2">&nbsp;</td> 
+            <td>&nbsp;</td> 
+        </tr> 
+        <tr> 
+            <td width="50%">&nbsp;</td> 
+        </tr> 
+    </table> 
+    Código:
+    Incluye los atributos cellpadding="0" (sin relleno interno en las celdas) y cellspacing="0" (sin espacio entre celdas).
+    La primera fila fusiona únicamente 2 columnas (colspan="2").
+    La primera celda de la segunda fila solo tiene fusión vertical (rowspan="2"), ocupando 1 columna por 2 filas de alto.
+    Visualización: Genera una cuadrícula de solo 2 columnas. Gracias a cellpadding="0" y cellspacing="0", los bordes de las celdas se muestran pegados/unificados (sin huecos entre sí) y la tabla es más compacta. La celda fusionada a la izquierda abarca la mitad del ancho total y dos filas de alto.
+
+
+3.h)
+
+
+    <form id="form1" name="form1" action="procesar.php" method="post" target="_blank"> 
+        <fieldset> 
+            <legend>LOGIN</legend> 
+            Usuario: <input type="text" id="usu1" name="usu1" value="xxx" /><br /> 
+            Clave: <input type="password" id="clave1" name="clave1" value="xxx" /> 
+        </fieldset> 
+        <input type="submit" id="boton1" name="boton1" value="Enviar" /> 
+    </form>
+    Código:
+    Método de envío: method="post", los datos viajan ocultos en el cuerpo de la petición HTTP hacia procesar.php.
+    Seguridad de campos: Usa type="password" en la clave y precompleta ambos campos con value="xxx".
+    Agrupación semántica: Utiliza <fieldset> y <legend>LOGIN</legend> para enmarcar el formulario.
+    Botón: Usa type="submit", el cual ejecuta el envío del formulario.
+    Visualización y Comportamiento: Muestra un recuadro con el título "LOGIN" incrustado en el borde superior. Los campos ya vienen rellenos con "xxx" (la contraseña oculta con puntos/asteriscos). Al hacer clic en "Enviar", abre una nueva pestaña (target="_blank") enviando los datos por POST.
+
+    <form id="form2" name="form2" action="" method="get" target="_blank"> 
+        LOGIN<br /> 
+        <label>Usuario: <input type="text" id="usu2" name="usu2" /></label><br /> 
+        <label>Clave: <input type="text" id="clave2" name="clave2" /></label><br /> 
+        <input type="submit" id="boton2" name="boton2" value="Enviar" /> 
+    </form>
+    Código:
+    Método de envío: method="get", los datos se adjuntan en la URL de destino (?usu2=...&clave2=...).
+    Destino: action="" (recalcula o recarga la misma página actual).
+    Seguridad de campos: Usa type="text" para la clave en lugar de password.
+    Accesibilidad y estructura: Asocia las etiquetas usando la etiqueta <label> envolviendo el texto y el <input>. No usa <fieldset>.
+    Visualización y Comportamiento: El título "LOGIN" aparece como texto plano sobre los campos, sin recuadro. La contraseña no se oculta mientras se escribe. Al hacer clic en "Enviar", abre una nueva pestaña recargando la misma URL exponiendo los datos en la barra de direcciones.
+
+    <form id="form3" name="form3" action="mailto:xx@xx.com” enctype=text/plain method="post" target="_blank"> 
+        <fieldset> 
+            <legend>LOGIN</legend> 
+            Usuario: <input type="text" id="usu3" name="usu3" /><br /> 
+            Clave: <input type="password" id="clave3" name="clave3" /> 
+        </fieldset> 
+        <input type="reset" id="boton3" name="boton3" value= "Enviar" /> 
+    </form>
+    Código:
+    Envío por correo: action="mailto:xx@xx.com" con enctype="text/plain".
+    Error en botón: Utiliza type="reset" en lugar de type="submit", aunque su texto sea value="Enviar".
+    Error de sintaxis: Falta la comilla de cierre en action="mailto:xx@xx.com” y faltan comillas en enctype=text/plain.
+    Visualización y Comportamiento: Estéticamente se ve similar al formulario 1 (con recuadro <fieldset>), pero no envía los datos. Al hacer clic en "Enviar", el botón con type="reset" borra el contenido que el usuario haya escrito en los campos. Además, el intento de envío por correo mediante mailto: depende de que el cliente tenga configurado un programa de correo local (como Outlook o Mail).
+
+
+3.i)
+
+      
+    <label>
+        Botón 1 
+        <button type="button" name="boton1" id="boton1"> 
+            <img src="logo.jpg" alt="Botón con imagen " width="30" height="20" /><br /> 
+            <b>CLICK AQUÍ</b>
+        </button>
+    </label> 
+    Código: Utiliza la etiqueta rica de contenedor <button type="button">. Esto permite anidar etiquetas HTML complejas en su interior, como una imagen (<img>), un salto de línea (<br />) y texto en negrita (<b>).
+    Visualización: Muestra el texto "Botón 1" seguido de un botón rectangular más alto que contiene una imagen miniatura de 30x20 px arriba y el texto en negrita CLICK AQUÍ abajo.
+
+    <label>
+        Botón 2 
+        <input type="button" name="boton2" id="boton2" value="CLICK AQUÍ" /> 
+    </label>
+    Código: Utiliza la etiqueta de elemento vacío <input type="button">. Es un elemento autocontenido cuyo contenido de texto se define de forma plana mediante el atributo value.
+    Visualización: Muestra el texto "Botón 2" seguido de un botón estándar de texto plano que dice "CLICK AQUÍ" en una sola línea, sin soporte nativo para incluir imágenes o formato de texto dentro del botón.
+
+3.j) 
+
+    <p>
+        <label>
+            <input type="radio" name="opcion" id="X" value="X" />
+            X
+        </label>
+        <br /> 
+        <label>
+            <input type="radio" name="opcion" id="Y" value="Y" />
+            Y
+        </label>
+    </p>
+    Código: Ambos elementos <input type="radio"> comparten exactamente el mismo valor en el atributo name (name="opcion").
+    Visualización y Comportamiento: Muestra dos opciones circulares (X e Y) dispuestas una debajo de la otra. Funcionan como un verdadero grupo de selección única: al seleccionar una opción, la otra se desmarca automáticamente (son mutuamente excluyentes). En el envío del formulario se transmitirá un único valor bajo la variable opcion.
+
+    <p>
+        <label>
+            <input type="radio" name="opcion1" id="X" value="X" />
+            X
+        </label>
+        <br /> 
+        <label>
+            <input type="radio" name="opcion2" id="Y" value="Y" />
+            Y
+        </label>
+    </p>
+    Código: Cada elemento <input type="radio"> tiene un atributo name diferente (name="opcion1" y name="opcion2").
+    Visualización y Comportamiento: Visualmente se ven iguales al primer bloque, pero no pertenecen al mismo grupo. El usuario puede seleccionar ambas opciones al mismo tiempo y, una vez seleccionadas, no se pueden desmarcar haciendo clic en la otra. En el envío del formulario se enviarán dos variables independientes (opcion1 y opcion2).
+
+
+3.k) 
+
+    <select name="lista"> 
+        <optgroup label="Caso 1"> 
+            <option>Mayo</option> 
+            <option>Junio</option> 
+        </optgroup> 
+        <optgroup label="Caso 2"> 
+            <option>Mayo</option> 
+            <option>Junio</option> 
+        </optgroup> 
+    </select> 
+    Código: Usa un elemento <select> básico con el atributo name="lista". Agrupa las opciones visualmente mediante etiquetas <optgroup> con sus respectivos títulos (label).
+    Visualización y Comportamiento: Muestra una lista desplegable clásica (combo box) de una sola línea. Al hacer clic se despliega mostrando las categorías "Caso 1" y "Caso 2" en negrita e inhabilitadas para selección, con sus opciones indentadas. Solo se puede seleccionar una única opción. En el envío del formulario se transmite un único valor bajo la clave lista.
+
+    <select name="lista[]" multiple="multiple"> 
+        <optgroup label=" Caso 1"> 
+            <option>Mayo</option> 
+            <option>Junio</option> 
+        </optgroup> 
+        <optgroup label=" Caso 2"> 
+            <option>Mayo</option> 
+            <option>Junio</option> 
+        </optgroup> 
+    </select>
+    Código: Agrega el atributo multiple="multiple". Modifica el nombre a name="lista[]" utilizando la sintaxis de corchetes para indicar al servidor (como PHP) que recibirá un arreglo (array) con los múltiples valores seleccionados.
+    Visualización y Comportamiento: Se renderiza como un cuadro de lista abierto de varios renglones visibles (en lugar de un desplegable). Permite seleccionar múltiples opciones simultáneamente manteniendo presionada la tecla Ctrl (o Cmd en macOS) o Shift.
