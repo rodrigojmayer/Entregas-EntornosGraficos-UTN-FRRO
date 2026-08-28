@@ -1,0 +1,43 @@
+<!-- Ejercicio 3 
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <style>
+        p.quitar {              /* Selector de los elementos <p> que tengan class="quitar" */
+            color: red;           /* Declara color de texto rojo */
+        } 
+        *.desarrollo {          /* Selector universal * combinado con class="desarrollo" */
+            font-size: 8px;         /* Declara tamaño de la fuente 8 píxeles */
+        } 
+        .importante {           /* Selector del elemento que tenga class="importante" */
+            font-size: 20px;        /* Declara tamaño de la fuente 20 píxeles */
+        } 
+    </style>
+</head>
+    <body>
+        <p class="desarrollo">  <!-- Todo el contenido dentro de este elemento tendra tamaño de fuente 8 píxeles  -->
+            En este primer párrafo trataremos lo siguiente: 
+            <br />xxxxxxxxxxxxxxxxxxxxxxxxx 
+        </p> 
+        <p class="quitar">   <!-- Todo el contenido dentro de este elemento tendra color de texto rojo  -->
+            Este párrafo debe ser quitado de la obra… 
+            <br />xxxxxxxxxxxxxxxxxxxxxxxxx 
+        </p> 
+        <p > 
+        </p> 
+            En este otro párrafo trataremos otro tema:<br /> 
+            xxxxxxxxxxxxxxxxxxxxxxxxx 
+        <p class="importante">        <!-- Todo el contenido dentro de este elemento tendra tamaño de la fuente 20 píxeles   -->
+            Y este es el párrafo más importante de la obra… 
+            <br />xxxxxxxxxxxxxxxxxxxxxxxxx 
+        </ p> 
+        <h1 class="quitar">Este encabezado también debe ser quitado de la obra</h1>    <!-- El contenido dentro de este elemento no tendra ningún cambio ya que el selector p.quitar es solo para los parrafos y no para los h1   -->
+        <p class="quitar importante">Se pueden aplicar varias clases a la vez</p>      <!-- Todo el contenido dentro de este elemento tendra color de texto rojo y tamaño de la fuente 20 píxeles   -->
+    </body>
+</html>

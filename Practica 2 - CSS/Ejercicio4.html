@@ -1,0 +1,85 @@
+<!-- Ejercicio 4 
+Dadas las siguientes declaraciones: 
+
+Analizar los siguientes códigos y comparar sus efectos. Explicar:  -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 4</title>
+        <style>
+            * {
+                color:green;    
+                /* Solo pinta verde el contenido de la tabla, porque el selector universal * tiene menor especificidad que el selector de tipo p, que define color negro para sus elementos, o que el selector de tipo a que define otros colores para sus elementos */
+            } 
+            a:link {
+                color:gray 
+            } 
+            a:visited{
+                color:blue 
+            } 
+            a:hover {
+                color:fuchsia 
+            } 
+            a:active {
+                color:red 
+            }  
+            p {
+                font-family: arial,helvetica;
+                font-size: 10px;
+                color:black; 
+            }
+            .contenido{
+                font-size: 14px;
+                font-weight: bold; 
+            } 
+        </style>
+    </head>
+    <body> 
+        <h2>Caso 1</h2>
+        <div>
+            <p class="contenido" style="font-weight: normal;">      <!-- La clase .contenido afecta únicamente al párrafo y es modificada localmente por el atributo style, el cual tiene prioridad sobre la clase porque los estilos en línea tienen mayor especificidad que los selectores externos o internos. -->
+                Este es un texto ...............
+            </p> 
+            <table> 
+                <tr> 
+                    <td>
+                        Y esta es una tabla.......
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td>
+                        <a href="http://www.google.com.ar">     <!-- Sigue los estados de color de las pseudo-clases (gray si no fue visitado, blue si fue visitado, fuchsia al pasar el cursor). -->
+                            con un enlace
+                        </a>
+                    </td> 
+                </tr> 
+            </table> 
+        </div> 
+
+        <hr size="3" color="black"/>
+    
+        <h2>Caso 2</h2>
+        <div class="contenido">     <!-- la clase .contenido actúa como contenedor global, propagando por herencia la negrita y el tamaño de 14px -->
+            <p> 
+                Este es un texto................
+            </p> 
+            <table> 
+                <tr> 
+                    <td>
+                        Y esta es una tabla.......
+                    </td> 
+                </tr> 
+                <tr> 
+                    <td>
+                        <a href="http://www.google.com.ar">
+                            con un enlace
+                        </a>
+                    </td> 
+                </tr> 
+            </table> 
+        </div>
+    </body> 
+</html>

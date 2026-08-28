@@ -1,0 +1,112 @@
+Ejercicio 1: Responder 
+1. ¿ Qué es CSS y para qué se usa? 
+    CSS (Cascading Style Sheets o Hojas de Estilo en Cascada) es un lenguaje de diseño utilizado para definir la presentación y el aspecto visual de un documento escrito en HTML o XML.
+    Se utiliza para separar la esctructura del contenido (definida por HTML) de su presentación gráfica (colores, fuentes, márgenes, alineación, diseño adaptable a dispositivos móviles, etc.). Esto facilita el mantenimiento web, reduce el tamaño de los archivos y permite aplicar un mismo diseño a múltiples páginas simultáneamente.
+
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan? 
+    CSS funciona mediante un conjunto de reglas. Cada regla se compone de un selector y un bloque de declaración:
+    - Selector Apunta al elemento (o elementos) HTML al que se le aplicará el estilo.
+    - Bloque de declaración: Delimitado por llaves {}, contiene una o más declaraciones separadas por punto y coma (;).
+    - Declaración: Consta de un par propiedad: valor.
+
+    Estructura general:
+    selector {
+        propiedad: valor;
+        propiedad: valor;
+    }
+
+    Ejemplo:
+    p {
+        color: blue;
+        font-size: 16px;
+    }
+
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento? 
+    1- Estilos en línea (inline): Se definen directamente dentro del elemento HTML mediante el atributo style.
+        Ejemplo:
+        <p style="color: red;">Texto en rojo</p>
+
+    2- Estilos internos (internal/embedded): Se incluyen en el encabezado (<head> ) del documento HTML utilizando la etiqueta <style>.
+        Ejemplo:
+        <head>
+            <style>
+                p { color: blue; }
+            </style>
+        </head>
+
+    3- Estilos externos (external): Los estilos se escriben en un archivo independiente con extensión .css y se vinculan al archivo HTML mediante la etiqueta <link> dentro del <head>. Es la forma más recomendada y eficiente.
+        Ejemplo:
+        <link rel="stylesheet" href="estilos.css">
+
+
+4. ¿ Cuáles son los distintos tipos de selectores más utilizados?  Ejemplifique cada uno. 
+    a) Selector de elemento (o tipo)
+        Afecta a todas las etiquetas HTML que coincidan con el nombre.
+        Ejemplo:
+        (Selecciona todos los párrafos)
+        p {
+            color: green;
+        }
+
+    b) Selector de clase (.)
+        Afecta a cualquier elemento HTML que tenga la clase especificada mediante el atributo class. Se reutiliza en múltiples elementos.
+        Ejemplo:
+        (Selecciona los elementos con class="destacado")
+        .destacado {
+            background-color: yellow;
+        }
+
+    c) Selector de identificador/id (#)
+        Afecta únicamente a un elemento con un atributo id específico. Debe ser único dentro de la página.
+        Ejemplo:
+        (Selecciona el elemento con id="encabezado-principal")
+        #encabezado-principal {
+            font-size: 24px;
+        }
+
+    d) Selector univerdal (*)
+        Selecciona todos los elementos del documento.
+        Ejemplo:
+        *{
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+    e) Selector agrupado
+        Permite aplicar los mismos estilos a varios selectores separados por comas.
+        Ejemplo:
+        h1, h2, h3 {
+            font-family: Arial, sans-serif;
+        }
+
+
+5. ¿ Qué es una pseudo-clase? Cuáles son las más utilizadas aplicadas a vínculos? 
+    Una pseudo-clase es una palabra clave agregada a un selector (precedida por dos puntos : ) que especifica un estado especial del elemento seleccionado (por ejemplo, cuando el usuario pasa el cursor sobre él o cuando un enlace ya fue visitado).
+    Pseudo-clases más utilizadas aplicadas a enlaces ( <a> ):
+        - :link - Define el estilo de un enlace que aún no ha sido visitado.
+        - :visited - Define el estilo de un enlace que el usuario ya visitó.
+        - :hover - Se activa cuando el usuario pasa el puntero del mouse sobre el enlace.
+        - :active - Se activa en el momento preciso en que el usuario hace clic sobre el enlace.
+
+        Ejemplo:
+        a:hover {
+            text-decoration: underline;
+            color: orange;
+        }
+
+
+6. ¿ Qué es la herencia? 
+    La herencia es el mecanismo mediante el cual los elementos hijos adoptan o "heredan" ciertos valores de estilo asignados a sus elementos padres en el árbol del DOM.
+    - Propiedades que se heredan comúnmente: Aquellas relacionadas con el texto (como color, font-family, font-size, line-height).
+    - Propiedades que no se heredan: Propiedades relacionadas con la estructura y el modelo de caja (como margin, padding, border, width, height).
+    
+    Ejemplo: Si aplicamos color: blue; al elemento <body>, todo el texto de los párrafos y listas dentro del cuerpo heredará el color azul por defecto.
+
+7. ¿ En qué consiste el proceso denominado cascada?
+    La cascada es el algoritmo que utiliza CSS para resolver conflictos cuando dos o más reglas se aplican al mismo elemento HTML. Determina qué regla "gana" y se aplica finalmente.
+    Para resolver los conflictos, el navegador evalúa los criterios en el siguiente orden de prioridad:
+    1- Origen e importancia: Las reglas marcadas con !important tienen la mayor prioridad, seguidas por las hojas de estilo del autor (desarrollador), las del usuario y, por último, las del navegador (estilos por defecto).
+    2- Especificidad: Mide qué tan específico es un selector. Un selector por ID (#) es más específico que una clase (.), y una clase es más específica que un selector de elemento (p). Los estilos en línea tienen mayor especificidad que los selectores externos o internos.
+    3- Orden de aparición: Si el origen y la especificidad son idénticos, la regla que aparezca más abajo (última) en el código CSS será la que prevalezca.

@@ -1,0 +1,38 @@
+<!-- Ejercicio 2 
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio 2</title>
+        <style>
+            p#normal {                         /* Selector de los elementos <p> que tengan id="normal" */
+                font-family: arial,helvetica;     /* Declara tipografía Arial, y Helvetica como alternativa */
+                font-size: 11px;                  /* Declara tamaño de la fuente 11 píxeles */
+                font-weight: bold;                /* Declara texto en negrita */
+            } 
+            *#destacado {                      /* Selector universal * combinado con id="destacado" */
+                border-style: solid;              /* Declara un borde solido */
+                border-color: blue;             /* Declara el color del borde azul */
+                border-width: 2px;                /* Declara el grosor del borde de 2 píxeles */
+            } 
+            #distinto {                        /* Selector del elemento que tenga id="distinto" */
+                background-color: #9EC7EB;      /* Declara color de fondo celeste */
+                color: red;                     /* Declara color del texto rojo */
+            } 
+        </style>
+    </head>
+    <body>
+        
+        <p id="normal">Este es un párrafo</p>       <!-- Todo el contenido dentro de este elemento tendra tipografía Arial, y Helvetica como alternativa, tamaño de la fuente 11 píxeles y texto en negrita   -->
+
+        <p id="destacado">Este es otro párrafo</p>      <!-- Todo el contenido dentro de este elemento tendra un borde solido, el color del borde azul y el grosor del borde de 2 píxeles  -->
+
+        <table id="destacado"><tr><td>Esta es una tabla</td></tr></table>       <!-- Todo el contenido dentro de este elemento tendra un borde solido, el color del borde azul y el grosor del borde de 2 píxeles  -->
+
+        <p id="distinto">Este es el último párrafo</p>      <!-- Todo el contenido dentro de este elemento tendra color de fondo celeste y color del texto rojo  -->
+
+    </body>
+</html>
