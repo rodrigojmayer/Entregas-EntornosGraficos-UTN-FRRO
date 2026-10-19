@@ -1,0 +1,41 @@
+Ejercicio 1: Completar 
+Manejo de Bases de Datos con PHP   
+(Apunte: PHP_BaseDatos) 
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es  necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función mysqli_connect (mysql_connect).
+
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios: 
+- $hostname, es un nombre de servidor (dato que debemos consultar en nuestra cuenta de hosting).
+- $nombreUsuario, es el nombre de usuario de base de datos, nombre que habremos especificado al crear la base de datos (si no lo hemos hecho, puede ser root).
+- $contraseña, es la contraseña de acceso para el usuario de base de datos, contraseña que habremos especificado al crear la base de datos.
+
+Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función mysqli_select_db (mysql_select_db).
+
+Esta función debe pasar como parámetros ($nombreConexion, $nombreBaseDatos). Para servidores no actualizados debe pasar como parámetros ($nombreBaseDatos, $nombreConexion).
+
+La función mysqli_query () se utiliza para ejecutar una consulta (como un SELECT, INSERT, UPDATE, etc.) a la base de datos que especifiquemos.
+
+y requiere como parámetros ($nombreConexion, "Consulta aqui"), o ($nombreConexion, $query). Para servidores no actualizados deben usar ("Consulta aqui", $nombreConexion).
+ 
+La cláusula or die() se utiliza para capturar el error, interrumpiendo la ejecución del script y mostrando un mensaje de error en caso de que la sentencia anterior falle.
+
+y la función mysqli_error () se puede usar para obtener el ultimo mensaje de error de la llamada mas reciente a una funcion se MySQLi.
+
+Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo 
+$vResultado, y a continuación se puede ejecutar el siguiente código (explicarlo):
+<?php 
+    while ($fila = mysqli_fetch_array($vResultado))  // Recorre el conjunto de resultados $vResultado fila por fila de manera secuencial. En cada iteracion, mysqli_fetch_array() extrae la fila actual como un arreglo y la asigna a la variable $fila. Repitiendo el ciclo hasta que no queden mas registros por leer.
+    { 
+?> 
+    <tr>                                        // Abre una fila
+        <td><?php echo ($fila[0]); ?></td>      // Imprime dentro de una celda de tabla el valor de la columna correspondiente a la posicion 0
+        <td><?php echo ($fila[1]); ?></td>      // Imprime dentro de una celda de tabla el valor de la columna correspondiente a la posicion 1
+        <td><?php echo ($fila[2]); ?></td>      // Imprime dentro de una celda de tabla el valor de la columna correspondiente a la posicion 2
+    </tr>                                       // Cierra la fila
+    <tr>                                        // Abre una segunda fila con una celda abarcando 5 columnas
+        <td colspan="5"> 
+<?php 
+    }                                           // Cierra el ciclo while
+    mysqli_free_result($vResultado);            // Libera la memoria RAM asociada al conjunto de resultados
+    mysqli_close($link);                        // Cierra formalmente la conecion abierta con el servidor de base de datos MySQL
+?> 
+
